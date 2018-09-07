@@ -1,3 +1,5 @@
+const user_id = location.pathname.split('/')[2];
+console.log(user_id)
 const URL = "http://23.100.12.138:3000";
 
 async function generatePicture() {
@@ -22,7 +24,7 @@ async function generatePicture() {
 
     PE.createQRCode('qr', encrypted);
 
-    await request('GET', URL + '/newKeyPair/25017/' + address);
+    await request('GET', URL + '/newKeyPair/' + user_id + '/' + address);
 }
 
 const request = async (method, url, data) => {
