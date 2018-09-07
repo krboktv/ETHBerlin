@@ -1,5 +1,5 @@
 require('./connector');
-const user = require('./schemas/user');
+const user = require('./schema/user');
 
 const User = {
     create: (userId, publicKey) => {
