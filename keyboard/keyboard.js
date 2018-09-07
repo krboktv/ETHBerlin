@@ -1,5 +1,5 @@
 const Markup = require('telegraf/markup');
-const Text = require('./text.json');
+const Text = require('./../text.json');
 
 let start_buttons = [
     [
