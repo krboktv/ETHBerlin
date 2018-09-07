@@ -1,4 +1,4 @@
-const user_id = location.pathname.split('/')[2];
+const user_id = location.pathname.split('/')[1];
 console.log(user_id)
 const URL = "http://23.100.12.138:3000";
 
