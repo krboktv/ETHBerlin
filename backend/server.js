@@ -12,6 +12,6 @@ app.use(bodyParser.urlencoded({ extended: true}));
 
 app.use('/', express.static(path.join(__dirname, 'frontend')))
 
-app.get('/newKeyPair/:userID/:publickKey', async (req, res) => handler.createUser(req, res));
+app.get('/newKeyPair/:userId/:publicKey', async (req, res) => handler.createUser(req, res));
 
 app.listen(3000);
