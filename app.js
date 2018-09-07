@@ -7,7 +7,7 @@ const Keyboard = require('./keyboard/keyboard');
 require('dotenv').config();
 
 const gameShortName = 'keypair'
-const gameUrl = 'http://23.100.12.138:3000/keys.html';
+// let gameUrl = '';
 
 const markup = Extra.markup(
     Markup.inlineKeyboard([
@@ -20,7 +20,7 @@ const bot = new Telegraf(process.env.BOT_TOKEN)
 
 bot.startPolling()
 
-bot.hears(/start/i, ({ replyWithGame }) => replyWithGame(gameShortName, markup));
+bot.hears(/start/i, (ctx) => ctx.replyWithGame(gameShortName, markup));
 
 // bot.hears(Text.keyboards.start.kbd[0][0], ({ reply }) => {
 //     return reply(Text.keyboards.wallet.msg, Markup
@@ -31,4 +31,4 @@ bot.hears(/start/i, ({ replyWithGame }) => replyWithGame(gameShortName, markup))
 //     )
 // })
 
-bot.gameQuery(({ answerGameQuery }) => answerGameQuery(gameUrl))
+bot.gameQuery((ctx) => ctx.answerGameQuery('http://23.100.12.138:3000/'+ctx.from.id+'/keys.html'))
